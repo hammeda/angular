@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { AbstractService } from '../tools/abstract-service';
-import { Article } from '../views/articles/article';
+import { Article } from '../views/home/articles/article';
 
 @Injectable({ // comme le @Bean en java 
     providedIn: 'root'

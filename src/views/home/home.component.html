@@ -1,0 +1,7 @@
+@for(post of data | async; track $index){
+@if(post.src){
+<app-articles [post]="post" (articleDeleted)="data = service.all()" />
+}
+} @empty {
+<p>Pas de post</p>
+}

@@ -1,4 +1,6 @@
+import { inject } from '@angular/core';
 import { Routes } from '@angular/router';
+import { ArticleService } from '../services/article.service';
 
 export const routes: Routes = [
     {
@@ -8,8 +10,11 @@ export const routes: Routes = [
     },
     {
         path: "home",
-        loadComponent: () => import('../views/articles/articles.component')
-            .then(m => m.ArticlesComponent)
+        loadComponent: () => import('../views/home/home.component')
+            .then(m => m.HomeComponent),
+        resolve: {
+            articles: () => inject(ArticleService).all()
+        }
     },
     {
         path: "register",
@@ -17,9 +22,9 @@ export const routes: Routes = [
             .then(m => m.RegisterComponent)
     },
     {
-        path: "editor",
+        path: "editor/:id",
         loadComponent: () => import('../views/article-editor/article-editor.component')
-            .then(m => m.ArticleEditorComponent)
+            .then(m => m.ArticleEditorComponent),
     },
 
     {
