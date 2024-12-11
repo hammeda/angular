@@ -4,11 +4,12 @@ import { ActivatedRoute } from '@angular/router';
 import { map } from 'rxjs';
 import { AsyncPipe } from '@angular/common';
 import { ArticlesComponent } from "./articles/articles.component";
+import { StepComponent, StepperComponent } from 'tw-stepper';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [AsyncPipe, ArticlesComponent],
+  imports: [AsyncPipe, ArticlesComponent, StepperComponent, StepComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })

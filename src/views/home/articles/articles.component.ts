@@ -3,6 +3,7 @@ import { ArticleService } from '../../../services/article.service';
 import { Article } from './article';
 import { AsyncPipe } from '@angular/common';
 import { RouterLink } from '@angular/router';
+import { AuthService } from '../../../services/auth.service';
 
 @Component({
   selector: 'app-articles',
@@ -16,6 +17,7 @@ export class ArticlesComponent {
   @Output() articleDeleted: EventEmitter<never> = new EventEmitter<never>();
 
   service = inject(ArticleService);
+  protected auth = inject(AuthService);
 
   Delete() {
     this.service.delete(this.post.id).subscribe(() => this.articleDeleted.emit());

@@ -32,4 +32,13 @@ export const routes: Routes = [
         loadComponent: () => import('../views/login/login.component')
             .then(m => m.LoginComponent)
     },
+
+    {
+        path: "list",
+        loadComponent: () => import('../views/list/list.component')
+            .then(m => m.ListComponent),
+        resolve: {
+            articles: () => inject(ArticleService).all()
+        }
+    },
 ];
