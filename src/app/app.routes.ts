@@ -21,8 +21,17 @@ export const routes: Routes = [
         loadComponent: () => import('../views/register/register.component')
             .then(m => m.RegisterComponent)
     },
+
     {
-        path: "editor/:id",
+        path: "articles",
+        loadComponent: () => import('../views/list/list.component')
+            .then(m => m.ListComponent),
+        resolve: {
+            articles: () => inject(ArticleService).all()
+        }
+    },
+    {
+        path: "articles/:id",
         loadComponent: () => import('../views/article-editor/article-editor.component')
             .then(m => m.ArticleEditorComponent),
     },
@@ -31,14 +40,6 @@ export const routes: Routes = [
         path: "login",
         loadComponent: () => import('../views/login/login.component')
             .then(m => m.LoginComponent)
-    },
+    }
 
-    {
-        path: "list",
-        loadComponent: () => import('../views/list/list.component')
-            .then(m => m.ListComponent),
-        resolve: {
-            articles: () => inject(ArticleService).all()
-        }
-    },
 ];

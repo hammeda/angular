@@ -11,7 +11,7 @@ export const appConfig: ApplicationConfig = {
   provideHttpClient(withInterceptors([
     backendInterceptor,
     authInterceptor,
-    errorInterceptor
+    errorInterceptor,
   ]))
   ]
 

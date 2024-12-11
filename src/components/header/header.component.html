@@ -15,11 +15,11 @@
                             <!--<a routerLink="home"
                                 class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Article</a> -->
                             @if(auth.isLogged){
-                            <a routerLink="editor/0"
+                            <a routerLink="articles/0"
                                 class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Nouvel
                                 Article</a>
 
-                            <a routerLink="list"
+                            <a routerLink="articles"
                                 class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">List
                                 article</a>
                             }
@@ -45,3 +45,4 @@
         </div>
     </nav>
 </div>
+<app-waiter />

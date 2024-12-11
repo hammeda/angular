@@ -14,16 +14,4 @@ import { AuthService } from '../../../services/auth.service';
 })
 export class ArticlesComponent {
   @Input({ required: true }) post!: Article;
-  @Output() articleDeleted: EventEmitter<never> = new EventEmitter<never>();
-
-  service = inject(ArticleService);
-  protected auth = inject(AuthService);
-
-  Delete() {
-    this.service.delete(this.post.id).subscribe(() => this.articleDeleted.emit());
-  }
-
-  Edit() {
-    this.service.update(this.post).subscribe();
-  }
 }

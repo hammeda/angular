@@ -22,6 +22,6 @@ export class ListComponent {
       map(({ articles }) => articles));
 
   delete(id: any) {
-    this.data = this.http.delete("/articles/" + id).pipe(switchMap(() => this.http.get("/articles")))
+    this.data = this.http.delete("/articles/" + id).pipe(switchMap(() => this.service.all()))
   }
 }
